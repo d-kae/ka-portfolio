@@ -14,7 +14,7 @@
             size="40"
             v-model="form.name"
             name="name"
-            @input="$v.form.name.$touch()"
+            @blur="$v.form.name.$touch()"
             class="text-black p-2 w-full max-w-xs rounded"
             placeholder="お名前"
           >
