@@ -14,7 +14,7 @@
         <svg class="inline w-10" viewBox="0 0 24 24">
           <path fill="currentColor" d="M15.41,16.58L10.83,12L15.41,7.41L14,6L8,12L14,18L15.41,16.58Z" />
         </svg>
-        <span class="-mr-2 text-xl inline-block align-middle">Prev</span>
+        <span class="-ml-2 text-xl inline-block align-middle">Prev</span>
       </NuxtLink>
       <div v-else></div>
       <NuxtLink
@@ -22,7 +22,7 @@
         :to="{ name: 'works-id', params: { id: nextId } }"
         class="hover:opacity-75"
       >
-        <span class="-ml-2 text-xl inline-block align-middle">Next</span>
+        <span class="-mr-2 text-xl inline-block align-middle">Next</span>
         <svg class="inline w-10" viewBox="0 0 24 24">
           <path fill="currentColor" d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" />
         </svg>
