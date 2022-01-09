@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 pt-14 lg:p-10">
+  <main class="px-4 py-14 lg:p-10">
     <h2 class="text-3xl lg:text-5xl tracking-widest mb-6">Contact</h2>
     <dl class="list-input mb-4">
       <div class="border border-red-700 px-4 py-2 text-red-700 bg-red-100 my-4" v-if="isAlert">入力内容に問題があります。確認して再度お試しください。</div>

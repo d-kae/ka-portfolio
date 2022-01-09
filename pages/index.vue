@@ -126,7 +126,8 @@ export default {
     return await context.$strapi.find('api/works', {
       populate: '*',
       "pagination[page]": 1,
-      "pagination[pageSize]": 3
+      "pagination[pageSize]": 3,
+      sort: ['date:desc']
     })
       .then(res => {
         return {

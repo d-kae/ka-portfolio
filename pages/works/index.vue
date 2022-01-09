@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 pt-14 lg:p-10">
+  <main class="px-4 py-14 lg:p-10">
     <h2 class="text-3xl lg:text-5xl tracking-widest mb-8">Works</h2>
     <div class="flex flex-wrap justify-center sm:justify-start">
       <div v-for="(work, i) in works" :key="i" class="m-4">

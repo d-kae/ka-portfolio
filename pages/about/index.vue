@@ -1,5 +1,5 @@
 <template>
-  <main class="p-4 pt-14 lg:p-10 max-w-4xl">
+  <main class="px-4 py-14 lg:p-10 max-w-4xl">
     <h2 class="text-3xl lg:text-5xl tracking-widest mb-6">About</h2>
     <div class="markdown" v-html="$md.render(about.attributes.text)" />
   </main>

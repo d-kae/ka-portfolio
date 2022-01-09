@@ -25,6 +25,14 @@ body {
   @apply list-disc pl-10;
 }
 
-.markdown p {
-  @apply leading-7;
+.markdown a {
+  @apply text-sky-300;
+}
+
+.markdown a:hover {
+  text-decoration: underline;
+}
+
+code {
+  @apply inline-block bg-gray-600 text-gray-200 p-1 text-xs rounded;
 }
