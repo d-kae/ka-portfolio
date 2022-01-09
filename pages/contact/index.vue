@@ -100,7 +100,7 @@
             rows="10"
             v-model="form.message"
             name="message"
-            @input="$v.form.message.$touch()"
+            @blur="$v.form.message.$touch()"
             class="text-black p-2 w-full max-w-2xl rounded"
             placeholder="お問い合わせ内容"
           ></textarea>
