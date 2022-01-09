@@ -40,11 +40,6 @@ export default {
 
   data() {
     return {
-      meta: {
-        title: '',
-        description: '',
-        image: ''
-      },
       // 前の記事ID
       prevId: null,
       // 次の記事ID
@@ -52,10 +47,6 @@ export default {
     }
   },
   mounted() {
-    this.meta.title = this.work.attributes.title
-    this.meta.description = this.work.attributes.description || ''
-    this.meta.image = this.getThumbnail(this.work)
-
     const currentId = Number(this.$route.params.id)
     const works = this.$store.state.works
 
@@ -77,8 +68,15 @@ export default {
       populate: '*'
     })
       .then(res => {
+        const work = res.data
+        const meta = {
+          title:  work.attributes.title,
+          description: work.attributes.description || '',
+          image: work.attributes.thumbnail.data.attributes.url
+        }
         return {
-          work: res.data
+          work,
+          meta
         }
       })
       .catch(err => {
