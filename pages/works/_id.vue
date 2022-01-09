@@ -3,7 +3,7 @@
     <NuxtLink class="inline-block hover:opacity-75 mb-8" to="/works"><< Works</NuxtLink>
     <h2 class="text-3xl md:text-5xl mb-6">{{ work.attributes.title }}</h2>
     <img class="mb-6" :src="getThumbnail(work)" width="750" alt="">
-    <div class="markdown mb-12" v-html="$md.render(work.attributes.text)" />
+    <div ref="markdown" class="markdown mb-12" v-html="$md.render(work.attributes.text)" />
     <div class="border-b md:w-52 w-full my-4"></div>
     <div class="flex justify-between md:w-52 w-full">
       <NuxtLink
@@ -47,6 +47,10 @@ export default {
     }
   },
   mounted() {
+    const linkList = this.$refs.markdown.getElementsByTagName('a')
+    Array.prototype.forEach.call(linkList, function(link) {
+       link.target = '_blank'
+    })
     const currentId = Number(this.$route.params.id)
     const works = this.$store.state.works
 
