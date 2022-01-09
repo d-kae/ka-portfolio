@@ -102,7 +102,7 @@
         </p>
         <ul class="leading-7 list-disc ml-8">
           <li>
-            ECサイト制作(Vue.js)
+            ECサイト開発(Vue.js)
           </li>
           <li>
             農業系カーナビアプリケーションのWeb管理画面開発(Vue.js, Spring)
