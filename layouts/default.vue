@@ -9,7 +9,9 @@
           class="fixed w-64 h-full bg-gray-700 text-white p-6 z-10"
         >
           <h1 class="font-bold text-2xl mb-8 tracking-wide">
-            <NuxtLink to="/">Kaede Ashizaki's Portfolio</NuxtLink>
+            <span @click="isSidebarOpen = false">
+              <NuxtLink to="/">Kaede Ashizaki's Portfolio</NuxtLink>
+            </span>
           </h1>
           <ul>
             <li @click="isSidebarOpen = false">
