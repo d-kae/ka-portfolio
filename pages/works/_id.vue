@@ -1,7 +1,7 @@
 <template>
   <div class="p-4 pt-14 lg:p-10 max-w-4xl">
     <NuxtLink class="inline-block hover:opacity-75 mb-8" to="/works"><< Works</NuxtLink>
-    <h2 class="text-5xl mb-6">{{ work.attributes.title }}</h2>
+    <h2 class="text-3xl md:text-5xl mb-6">{{ work.attributes.title }}</h2>
     <img class="mb-6" :src="getThumbnail(work)" width="750" alt="">
     <div class="markdown mb-12" v-html="$md.render(work.attributes.text)" />
     <div class="border-b md:w-52 w-full my-4"></div>
