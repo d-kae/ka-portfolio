@@ -4,6 +4,8 @@ const DESCRIPTION = 'Webサイト制作・Webアプリケーション開発に�
 const SITE_NAME = "Kaede Ashizaki's Portfolio"
 const SITE_OGP_IMAGE = '/img/ogp.png'
 
+import axios from 'axios'
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
@@ -36,6 +38,22 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ]
+  },
+
+  generate: {
+    subFolders: true,
+    async routes(callback) {
+      await axios.get(process.env.STRAPI_URL + '/api/works?populate=*')
+        .then(res => {
+          const contents = res.data.data
+          const routeList = contents.map((content) => ({
+            route: `/works/${ content.id }`,
+            payload: content
+          }))
+          callback(null, routeList)
+        })
+        .catch(callback)
+    }
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
