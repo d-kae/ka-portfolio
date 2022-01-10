@@ -8,8 +8,8 @@
     </div>
     <section class="pb-12">
       <h3 class="text-2xl sm:text-3xl font-bold mb-6 leading-normal text-left sm:text-center px-4">Webサイト制作・Webアプリ開発であなたの課題を解決します</h3>
-      <div class="flex items-center flex-col xl:flex-row">
-        <div class="m-4 lg:m-12">
+      <div class="flex items-center flex-col xl:flex-row max-w-7xl mx-auto">
+        <div class="m-4">
           <img src="~/assets/img/introduction.jpg" alt="" width="500" height="">
         </div>
         <div class="p-4 xl:flex-1 flex-initial">
