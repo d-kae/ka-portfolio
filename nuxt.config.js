@@ -29,11 +29,11 @@ export default {
       { hid: 'og:url', property: 'og:url', content: process.env.BASE_URL || 'https://localhost:3000' },
       { hid: 'og:title', property: 'og:title', content: SITE_NAME },
       { hid: 'og:description', property: 'og:description', content: DESCRIPTION },
-      { hid: 'og:image', property: 'og:image', content: SITE_OGP_IMAGE },
+      { hid: 'og:image', property: 'og:image', content: process.env.BASE_URL + '/' + SITE_OGP_IMAGE },
       { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
       { hid: 'twitter:title', name: 'twitter:title', content: SITE_NAME },
       { hid: 'twitter:description', name: 'twitter:description', content: DESCRIPTION },
-      { hid: 'twitter:image', name: 'twitter:image', content: SITE_OGP_IMAGE },
+      { hid: 'twitter:image', name: 'twitter:image', content: process.env.BASE_URL + SITE_OGP_IMAGE },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
