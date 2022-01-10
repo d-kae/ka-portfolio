@@ -43,7 +43,7 @@ export default {
       if (!work.attributes.thumbnail.data) {
         return ""
       }
-      return work.attributes.thumbnail.data.attributes.url
+      return work.attributes.thumbnail.data.attributes.formats.small.url
     },
   }
 }
