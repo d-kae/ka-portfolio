@@ -2,7 +2,10 @@
   <div class="p-4 pt-14 lg:p-10 max-w-4xl">
     <NuxtLink class="inline-block hover:opacity-75 mb-8" to="/works"><< Works</NuxtLink>
     <h2 class="text-3xl md:text-5xl mb-6">{{ work.attributes.title }}</h2>
-    <img class="mb-6" :src="getThumbnail(work)" width="750" alt="">
+    <transition name="image-fade">
+      <img v-show="isLoaded" class="mb-6" :src="getThumbnail(work)" width="750" height="422" alt="" @load="isLoaded = true">
+    </transition>
+    <div v-show="!isLoaded" class="mb-6" style="height: 422px"></div>
     <div ref="markdown" class="markdown mb-12" v-html="$md.render(work.attributes.text)" />
     <div class="border-b md:w-52 w-full my-4"></div>
     <div class="flex justify-between md:w-52 w-full">
@@ -43,7 +46,9 @@ export default {
       // 前の記事ID
       prevId: null,
       // 次の記事ID
-      nextId: null
+      nextId: null,
+
+      isLoaded: false
     }
   },
   mounted() {
@@ -99,5 +104,11 @@ export default {
 </script>
 
 <style scoped>
+.image-fade-enter-active, .image-fade-leave-active {
+  transition: opacity .8s;
+}
 
+.image-fade-enter, .image-fade-leave-to {
+  opacity: 0;
+}
 </style>
