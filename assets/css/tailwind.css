@@ -25,6 +25,10 @@ body {
   @apply list-disc pl-10;
 }
 
+.markdown p {
+  @apply my-4;
+}
+
 .markdown a {
   @apply text-sky-300;
 }

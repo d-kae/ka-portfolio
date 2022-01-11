@@ -73,6 +73,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
+    '@nuxtjs/google-analytics'
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -80,6 +81,10 @@ export default {
     '@nuxtjs/strapi',
     '@nuxtjs/markdownit'
   ],
+
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTICS_ID,
+  },
 
   markdownit: {
     injected: true // $md.render()がグローバルで使えるようになる
@@ -92,7 +97,10 @@ export default {
   publicRuntimeConfig: {
     contactUrl: process.env.CONTACT_URL || 'https://script.google.com/macros/s/AKfycbyAAMRo2m7tyZzvJyhXEtiOjVbtUiT5lKlQNeVlhTeQb_UCQKw/exec',
     baseUrl: process.env.BASE_URL || 'https://localhost:3000',
-    siteName: SITE_NAME
+    siteName: SITE_NAME,
+    googleAnalytics: {
+      id: process.env.GOOGLE_ANALYTICS_ID || ''
+    },
   },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
