@@ -14,7 +14,7 @@ export default {
   head: {
     title: SITE_NAME,
     htmlAttrs: {
-      lang: 'en'
+      lang: 'ja'
     },
     meta: [
       { charset: 'utf-8' },
