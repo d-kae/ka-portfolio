@@ -80,8 +80,26 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/strapi',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap',
   ],
+
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://ka-portfolio.vercel.app',
+    async routes(callback) {
+      await axios.get(process.env.STRAPI_URL + '/api/works?populate=*')
+        .then(res => {
+          const contents = res.data.data
+          const routeList = contents.map((content) => ({
+            route: `/works/${ content.id }`,
+            payload: content
+          }))
+          callback(null, routeList)
+        })
+        .catch(callback)
+    }
+  },
 
   googleAnalytics: {
     id: process.env.GOOGLE_ANALYTICS_ID,
