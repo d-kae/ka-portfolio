@@ -106,7 +106,7 @@ export default {
   },
 
   markdownit: {
-    injected: true // $md.render()がグローバルで使えるようになる
+    injected: true
   },
 
   strapi: {
